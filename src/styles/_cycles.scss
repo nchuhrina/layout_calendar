@@ -1,3 +1,9 @@
+@each $name_day, $day in $week_days {
+  .calendar-#{$name_day} div:first-child {
+    margin-left: $divSizes*$day+$divMargins+$day;
+  }
+}
+
 @for $i from 1 through 31 {
   .calendar :nth-child(#{$i})::before {
     content: "#{$i}";
@@ -8,15 +14,9 @@
   }
 }
 
-@each $name_day, $day in $week_days {
-  .calendar-#{$name_day} div:nth-child(1) {
-    margin-left: $divSizes*$day+$divMargins+$day;
-  }
-}
-
 @each $day in $month_last_day {
   .calendar-#{$day} {
-    div:nth-child(1n + #{$day}) {
+    div:nth-child(1n + #{$day+1}) {
       display: none;
     }
   }
