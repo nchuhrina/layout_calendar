@@ -16,7 +16,7 @@
 
 @each $days in $month_last_day {
   .calendar-#{$days} {
-    div:nth-child(n+#{$days}) {
+    div:nth-child(n+#{$days+1}) {
       display: none;
     }
   }
