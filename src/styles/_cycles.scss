@@ -14,9 +14,9 @@
   }
 }
 
-@each $day in $month_last_day {
-  .calendar-#{$day} {
-    div:nth-child(1n + #{$day+1}) {
+@each $days in $month_last_day {
+  .calendar-#{$days} {
+    div:nth-child(n+#{$days}) {
       display: none;
     }
   }
